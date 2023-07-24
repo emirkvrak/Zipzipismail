@@ -2,6 +2,8 @@
 
 * Bu repoda, üniversitede 1. sınıfta yaptığım küçük bir proje olan zıplayan top oyunu kodları bulunmaktadır.
 
+* IDE olarak Eclipse Kullandım.
+
 * Dikkat !!! 
     * res klasörünün içindeki dosyalar bin klasörü içinde de olması gerekiyor kodların çalışması  için çalıştırmadan önce tekrar kontrol edin.
 
