@@ -1,0 +1,12 @@
+target/
+bin/
+build/
+dist/
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+.vscode/
+hs_err_pid*.log
+replay_pid*.log
