@@ -4,6 +4,8 @@ Java Swing ile geliştirilmiş, otomatik zıplayan top mekaniğine sahip 2D plat
 
 Bu proje, Kütahya Dumlupınar Üniversitesi Bilgisayar Mühendisliği bölümünde 1. sınıf uygulama ödevi olarak hazırlanmış bir Java 2D platform oyunudur. Proje daha sonra kaynak kodu, arayüzü, testleri ve Windows paketleme süreci geliştirilerek güncellenmiştir.
 
+[⬇️ Windows portable paketini indir](https://github.com/emirkvrak/Zipzipismail/releases/latest/download/Zipzipismail-portable.zip)
+
 ## Özellikler
 
 - Otomatik zıplama ve yatay oyuncu kontrolü
@@ -100,6 +102,25 @@ Top otomatik olarak zıplar. Oyuncu yalnızca yatay hareketi yönetir. Testerele
 
 3. bölüm oyunun en zor bölümüdür ve ek olarak checkpoint, yıldız ve daha yüksek zıplama sağlayan `BOUNCY` blokları içerir. Checkpoint etkinleştirildikten sonra oyun bitişinde `Enter` ile checkpoint noktasından devam edilebilir.
 
+```mermaid
+flowchart TD
+    A[Oyun başlatılır] --> B[Ana menü]
+    B --> C[Bölüm seçimi]
+    C --> D[Seçilen bölüm yüklenir]
+    D --> E[Top otomatik olarak zıplar]
+    E --> F{Oyuncu kararı}
+    F -->|Sağa / sola hareket| E
+    F -->|Checkpoint alınır| G[Checkpoint kaydedilir]
+    F -->|Yıldıza ulaşılır| H[Yıldız toplanır]
+    F -->|Testereye çarpılır| I[Game Over]
+    F -->|Potaya ulaşılır| J[Bölüm tamamlandı]
+    I -->|Yeniden başlat| D
+    I -->|Checkpoint'ten devam| G
+    J --> K{Sonraki bölüm var mı?}
+    K -->|Evet| C
+    K -->|Hayır| L[Oyun tamamlandı]
+```
+
 ## Mimari
 
 Proje, oyun modeli, fizik, state yönetimi, kaynaklar ve çizim sorumluluklarını ayıran sade bir katmanlı yapı kullanır. Katı bir MVC framework'ü değildir; her sınıfın görev alanı küçük ve doğrudan tutulmuştur.
@@ -189,7 +210,7 @@ Portable ZIP başka bir Windows bilgisayara çıkarılıp `Zipzipismail.exe` ça
 
 ### Hazır Windows paketini indirme
 
-Java veya Maven kurmadan oynamak için [GitHub Releases sayfasındaki en güncel sürümü](https://github.com/emirkvrak/Zipzipismail/releases/latest) açın ve `Zipzipismail-portable.zip` dosyasını indirin.
+Java veya Maven kurmadan oynamak için [Windows portable paketini doğrudan indirin](https://github.com/emirkvrak/Zipzipismail/releases/latest/download/Zipzipismail-portable.zip). Alternatif olarak [GitHub Releases sayfasından](https://github.com/emirkvrak/Zipzipismail/releases/latest) `Zipzipismail-portable.zip` dosyasını seçebilirsiniz.
 
 1. ZIP dosyasını Windows üzerinde bir klasöre çıkarın.
 2. Çıkarılan `Zipzipismail` klasöründeki `Zipzipismail.exe` dosyasını çalıştırın.
