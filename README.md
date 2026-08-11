@@ -4,7 +4,7 @@ Java Swing ile geliştirilmiş, otomatik zıplayan top mekaniğine sahip 2D plat
 
 Bu proje, Kütahya Dumlupınar Üniversitesi Bilgisayar Mühendisliği bölümünde 1. sınıf uygulama ödevi olarak hazırlanmış bir Java 2D platform oyunudur. Proje daha sonra kaynak kodu, arayüzü, testleri ve Windows paketleme süreci geliştirilerek güncellenmiştir.
 
-[⬇️ Windows portable paketini indir](https://github.com/emirkvrak/Zipzipismail/releases/latest/download/Zipzipismail-portable.zip)
+Güncel sürüm: `v1.0.0`
 
 ## Özellikler
 
