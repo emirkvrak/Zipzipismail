@@ -75,44 +75,53 @@ Test paketi; oyuncu ve çarpışma kurallarını, girdileri, harita yüklemeyi, 
 mvn test
 ```
 
-## Diğer ekran görüntüleri
+## Ekran görüntüleri
 
-<details>
-<summary>Galeriyi göster</summary>
-
-<div align="center">
 <table>
   <tr>
-    <td><img src="assets/01-level-selection.png" alt="Bölüm seçim ekranı" width="400"></td>
-    <td><img src="assets/02-level-1-gameplay.png" alt="1. bölüm oynanışı" width="400"></td>
+    <td align="center" width="50%">
+      <img src="assets/01-level-selection.png" alt="Zıpzıp İsmail bölüm seçim ekranı" width="360"><br>
+      <strong>Bölüm seçimi</strong><br>
+      Üç bölümün tamamlanma, süre ve yıldız bilgilerinin gösterildiği ekran.
+    </td>
+    <td align="center" width="50%">
+      <img src="assets/02-level-1-gameplay.png" alt="Zıpzıp İsmail birinci bölüm oynanışı" width="360"><br>
+      <strong>1. bölüm</strong><br>
+      Otomatik zıplama ve yatay yönlendirme mekaniğinin başlangıç parkuru.
+    </td>
   </tr>
   <tr>
-    <td align="center">Bölüm seçimi</td>
-    <td align="center">1. bölüm</td>
+    <td align="center">
+      <img src="assets/03-level-2-completed.png" alt="Zıpzıp İsmail ikinci bölüm sonuç ekranı" width="360"><br>
+      <strong>2. bölüm sonucu</strong><br>
+      Tamamlanma süresini ve sonraki bölüme geçişi gösteren sonuç ekranı.
+    </td>
+    <td align="center">
+      <img src="assets/04-level-3-gameplay.png" alt="Zıpzıp İsmail üçüncü bölüm oynanışı" width="360"><br>
+      <strong>3. bölüm</strong><br>
+      Yıldızlar, checkpointler ve yüksek sıçrama bloklarının bulunduğu parkur.
+    </td>
   </tr>
   <tr>
-    <td><img src="assets/03-level-2-completed.png" alt="2. bölüm sonuç ekranı" width="400"></td>
-    <td><img src="assets/04-level-3-gameplay.png" alt="3. bölüm oynanışı" width="400"></td>
+    <td align="center">
+      <img src="assets/05-pause-menu.png" alt="Zıpzıp İsmail duraklatma menüsü" width="360"><br>
+      <strong>Duraklatma menüsü</strong><br>
+      Devam etme, yeniden başlatma, kontroller ve ana menü seçenekleri.
+    </td>
+    <td align="center">
+      <img src="assets/06-controls-menu.png" alt="Zıpzıp İsmail kontroller ekranı" width="360"><br>
+      <strong>Kontroller</strong><br>
+      Klavye kısayolları ve ses ayarının birlikte gösterildiği yardım ekranı.
+    </td>
   </tr>
   <tr>
-    <td align="center">2. bölüm sonucu</td>
-    <td align="center">3. bölüm</td>
-  </tr>
-  <tr>
-    <td><img src="assets/05-pause-menu.png" alt="Duraklatma menüsü" width="400"></td>
-    <td><img src="assets/06-controls-menu.png" alt="Kontroller ekranı" width="400"></td>
-  </tr>
-  <tr>
-    <td align="center">Duraklatma menüsü</td>
-    <td align="center">Kontroller</td>
+    <td align="center" colspan="2">
+      <img src="assets/07-game-over-checkpoint.png" alt="Zıpzıp İsmail checkpoint sonrası oyun sonu ekranı" width="360"><br>
+      <strong>Checkpoint sonrası oyun sonu</strong><br>
+      Testereye temas edildiğinde checkpointten devam etme seçeneği.
+    </td>
   </tr>
 </table>
-
-<img src="assets/07-game-over-checkpoint.png" alt="Checkpoint etkin durumdayken oyun sonu ekranı" width="520">
-
-Checkpoint sonrası oyun sonu
-</div>
-</details>
 
 ## Bilinen sınırlamalar
 
