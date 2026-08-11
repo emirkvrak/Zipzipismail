@@ -1,5 +1,9 @@
 # Zıpzıp İsmail
 
+![Java 17](https://img.shields.io/badge/Java-17-ED8B00?logo=openjdk&logoColor=white)
+![Swing](https://img.shields.io/badge/UI-Swing-4B8BBE)
+[![Maven Tests](https://github.com/emirkvrak/Zipzipismail/actions/workflows/tests.yml/badge.svg)](https://github.com/emirkvrak/Zipzipismail/actions/workflows/tests.yml)
+
 Java Swing ile geliştirilmiş, otomatik zıplayan top mekaniğine sahip 2D platform oyunudur. Oyuncu topu sağa ve sola yönlendirerek testerelerden kaçınır, potaya ulaşır ve özellikle 3. bölümde yıldızları toplamaya çalışır.
 
 Bu proje, Kütahya Dumlupınar Üniversitesi Bilgisayar Mühendisliği bölümünde 1. sınıf uygulama ödevi olarak hazırlanmış bir Java 2D platform oyunudur. Proje daha sonra kaynak kodu, arayüzü, testleri ve Windows paketleme süreci geliştirilerek güncellenmiştir.
@@ -25,6 +29,12 @@ ZIP dosyasını çıkarıp `Zipzipismail/Zipzipismail.exe` dosyasını çalışt
 Top zemine değdiğinde kendiliğinden seker; oyuncu yalnızca yatay yönü belirler. Testereye temas etmek veya haritadan düşmek oyunu bitirir, potaya ulaşmak bölümü tamamlar. İlk iki bölümün sonuç ekranından sıradaki bölüme geçilebilir.
 
 3. bölümde etkinleştirilen checkpoint, kayıptan sonra aynı noktadan devam etmeyi sağlar. Bu bölümdeki yıldızlar isteğe bağlı olarak toplanır ve en yüksek yıldız sayısı yerel ilerleme kaydına yazılır.
+
+| Bölüm | Amaç ve mekanikler |
+| --- | --- |
+| 1 | Otomatik zıplama ve yatay kontrolle testere engellerini geçip potaya ulaşın. |
+| 2 | Aynı temel kurallarla ikinci platform parkurunu tamamlayın. |
+| 3 | Yıldızları toplayın; checkpointleri ve yüksek sıçrama bloklarını kullanarak potaya ulaşın. |
 
 ## Kontroller
 
@@ -67,7 +77,59 @@ Windows paketini yerel olarak üretmek için `JAVA_HOME` değişkenini JDK 17 ve
 
 Betik `dist/Zipzipismail/Zipzipismail.exe` ile `dist/Zipzipismail-portable.zip` çıktılarını oluşturur.
 
-## Testler
+### Uygulama akışı
+
+```mermaid
+flowchart LR
+    A["GameApplication"] --> B["GameWindow"]
+    B --> C["GameCanvas"]
+    C --> D["GameStateManager"]
+    D --> E["MenuState"]
+    D --> F["LevelState"]
+    F --> G["Player"]
+    F --> H["CollisionService"]
+    F --> I["GameMap"]
+    F --> J["WorldRenderer"]
+    D --> K["AudioManager / ProgressStore"]
+```
+
+### Proje yapısı
+
+```text
+Zipzipismail/
+├── .github/workflows/tests.yml
+├── assets/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── app/          # Uygulama başlangıcı ve pencere
+│   │   │   ├── core/         # Oyun döngüsü ve girdiler
+│   │   │   ├── effect/       # Görsel parçacık efektleri
+│   │   │   ├── entity/       # Oyuncu
+│   │   │   ├── physics/      # Çarpışma kuralları
+│   │   │   ├── resource/     # Kaynak, ses ve yerel kayıt
+│   │   │   ├── state/        # Menü ve bölüm durumları
+│   │   │   ├── ui/           # Çizim ve arayüz
+│   │   │   └── world/        # Harita, kamera ve nesneler
+│   │   └── resources/
+│   │       ├── Blocks/
+│   │       ├── Maps/
+│   │       ├── Resim/
+│   │       └── Ses/
+│   └── test/java/
+├── package.ps1
+└── pom.xml
+```
+
+## Doğrulama
+
+| Kontrol | Sonuç |
+| --- | --- |
+| Maven ve JUnit 5 | 19 test, 0 hata |
+| JAR | `target/zipzipismail-1.0.0.jar` üretildi |
+| Windows paketi | EXE, uygulama JAR'ı ve gömülü Java runtime doğrulandı |
+| GitHub Actions | Java 17 üzerinde Maven testleri başarılı |
+| Grafik arayüz | EXE açılış smoke testi yapıldı; tam oynanış manuel doğrulanmalı |
 
 Test paketi; oyuncu ve çarpışma kurallarını, girdileri, harita yüklemeyi, kamera ve checkpoint davranışını, yıldızları, ilerleme kaydını, durum geçişlerini ve temel arayüz çizimini kapsayan 19 JUnit 5 testi içerir.
 
