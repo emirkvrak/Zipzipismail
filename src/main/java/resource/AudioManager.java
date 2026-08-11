@@ -24,7 +24,7 @@ public final class AudioManager implements AutoCloseable {
             for (SoundEffect effect : SoundEffect.values()) {
                 clips.put(effect, createClip(effect));
             }
-        } catch (LineUnavailableException exception) {
+        } catch (LineUnavailableException | IllegalArgumentException exception) {
             close();
             System.err.println("Ses efektleri kullanılamıyor: " + exception.getMessage());
         }
