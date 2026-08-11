@@ -1,77 +1,46 @@
-# Zipzipismail
+# Zıpzıp İsmail
 
 Java Swing ile geliştirilmiş, otomatik zıplayan top mekaniğine sahip 2D platform oyunudur. Oyuncu topu sağa ve sola yönlendirerek testerelerden kaçınır, potaya ulaşır ve özellikle 3. bölümde yıldızları toplamaya çalışır.
 
 Bu proje, Kütahya Dumlupınar Üniversitesi Bilgisayar Mühendisliği bölümünde 1. sınıf uygulama ödevi olarak hazırlanmış bir Java 2D platform oyunudur. Proje daha sonra kaynak kodu, arayüzü, testleri ve Windows paketleme süreci geliştirilerek güncellenmiştir.
 
-Güncel sürüm: `v1.0.0`
+**[Windows portable paketini indir](https://github.com/emirkvrak/Zipzipismail/releases/latest/download/Zipzipismail-portable.zip)** · [Sürüm notları](https://github.com/emirkvrak/Zipzipismail/releases/latest)
 
-## Özellikler
+ZIP dosyasını çıkarıp `Zipzipismail/Zipzipismail.exe` dosyasını çalıştırın. Paket Java runtime içerdiği için ayrıca Java kurmanız gerekmez.
+
+<div align="center">
+  <img src="assets/02-gameplay-demo.gif" alt="Zıpzıp İsmail 3. bölüm oynanış demosu" width="720">
+</div>
+
+## Temel özellikler
 
 - Otomatik zıplama ve yatay oyuncu kontrolü
-- Yuvarlak çarpışma alanına sahip dönen testereler
-- Pota ile bölüm tamamlama ve tehlikelerle oyun bitişi
-- Duraklatma, devam etme, yeniden başlatma ve ana menü akışı
-- Ana menü ve pause ekranında mouse ile seçim
-- Oyun içi kontroller yardım ekranı
-- Kontroller ekranından ses açma/kapatma
-- F10 ile ses, F11 ile tam ekran kısayolu
-- Bölüm süresi, yıldız sayısı ve sonuç ekranı
-- En iyi süre, tamamlanma ve yıldız bilgilerinin kalıcı kaydı
-- 3. bölümde checkpoint, yıldız ve daha yüksek zıplatan özel bloklar
-- Kamera takip yumuşatması, toz partikülleri ve squash/stretch top animasyonu
+- Testere engelleri, bölüm sonu potası ve üç oynanabilir bölüm
+- Süre takibi ile bölüm bazında en iyi süre ve tamamlanma kaydı
+- 3. bölümde beş yıldız, iki checkpoint ve daha yükseğe sıçratan bloklar
+- Duraklatma, kontrol yardımı, ses açma/kapatma ve tam ekran desteği
 
-## Ekran görüntüleri
+## Oynanış
 
-<div align="center">
+Top zemine değdiğinde kendiliğinden seker; oyuncu yalnızca yatay yönü belirler. Testereye temas etmek veya haritadan düşmek oyunu bitirir, potaya ulaşmak bölümü tamamlar. İlk iki bölümün sonuç ekranından sıradaki bölüme geçilebilir.
 
-<table>
-  <tr>
-    <td><img src="assets/01-level-selection.png" alt="Bölüm seçim ekranı" width="420"></td>
-    <td><img src="assets/02-level-1-gameplay.png" alt="1. bölüm oynanışı" width="420"></td>
-  </tr>
-  <tr>
-    <td align="center">Bölüm seçimi</td>
-    <td align="center">1. bölüm oynanışı</td>
-  </tr>
-  <tr>
-    <td><img src="assets/03-level-2-completed.png" alt="2. bölüm tamamlandı ekranı" width="420"></td>
-    <td><img src="assets/04-level-3-gameplay.png" alt="3. bölüm oynanışı" width="420"></td>
-  </tr>
-  <tr>
-    <td align="center">2. bölüm tamamlandı</td>
-    <td align="center">3. bölüm oynanışı</td>
-  </tr>
-  <tr>
-    <td><img src="assets/05-pause-menu.png" alt="Oyun duraklatma menüsü" width="420"></td>
-    <td><img src="assets/06-controls-menu.png" alt="Kontroller ve ses butonu" width="420"></td>
-  </tr>
-  <tr>
-    <td align="center">Duraklatma menüsü</td>
-    <td align="center">Kontroller ve ses ayarı</td>
-  </tr>
-</table>
+3. bölümde etkinleştirilen checkpoint, kayıptan sonra aynı noktadan devam etmeyi sağlar. Bu bölümdeki yıldızlar isteğe bağlı olarak toplanır ve en yüksek yıldız sayısı yerel ilerleme kaydına yazılır.
 
-<p><img src="assets/07-game-over-checkpoint.png" alt="Testereye çarpma ve checkpoint ekranı" width="520"></p>
-<p>Oyun bitişi ve checkpoint</p>
+## Kontroller
 
-</div>
+| Girdi | İşlev |
+|---|---|
+| `A / D` veya `← / →` | Topu sola veya sağa yönlendirir |
+| `↑ / ↓` | Menü seçimini değiştirir |
+| `Enter` | Seçimi onaylar; sonuç ekranında ilerler veya yeniden başlatır |
+| `Esc` | Oyunu duraklatır veya önceki ekrana döner |
+| `F10` | Sesi açar/kapatır |
+| `F11` | Tam ekranı açar/kapatır |
+| Sol tık | Menü ve duraklatma ekranındaki düğmeleri seçer |
 
-## Oynanış demosu
+## Kaynak koddan çalıştırma
 
-<div align="center">
-  <img src="assets/02-gameplay-demo.gif" alt="3. bölüm oynanış demosu" width="720">
-</div>
-
-## Gereksinimler
-
-- JDK 17 veya üzeri
-- Maven 3.9 veya üzeri
-- Java destekleyen bir masaüstü işletim sistemi
-
-Oyunda harici bir runtime oyun kütüphanesi kullanılmaz; grafik, pencere ve ses için Java SE API’leri kullanılır. Windows üzerinde Maven ile derleme ve JAR çalıştırma doğrulanmıştır.
-
-## Kurulum ve çalıştırma
+JDK 17 veya üzeri ile Maven 3.9 veya üzeri gerekir.
 
 ```powershell
 git clone https://github.com/emirkvrak/Zipzipismail.git
@@ -80,153 +49,74 @@ mvn clean package
 java -jar target/zipzipismail-1.0.0.jar
 ```
 
-Kaynak dosyalarını IDE olmadan da Maven ile derleyebilirsiniz. Görsel, harita ve ses dosyaları classpath üzerinden yüklendiği için oyun proje kökünden çalıştırılmak zorunda değildir.
+Ana sınıf `app.GameApplication` sınıfıdır. Görseller, haritalar ve ses dosyası JAR içindeki classpath kaynaklarından yüklenir.
 
-## Kontroller ve kullanıcı arayüzü
+## Teknik yapı
 
-| Girdi | İşlev |
-|---|---|
-| `A / D` veya `← / →` | Topu sağa ve sola hareket ettirir |
-| Otomatik zıplama | Top zemine değdiğinde kendiliğinden seker |
-| `Esc` | Oyunu duraklatır; duraklatma ekranından ana menüye dönülür |
-| `Enter` | Menü seçimini, yeniden başlatmayı veya sonraki bölümü onaylar |
-| `F10` | Sesi açar/kapatır |
-| `F11` | Tam ekranı açar/kapatır |
-| Mouse | Menü ve pause butonlarını seçer |
+- Java 17, Swing ve Java2D
+- Maven ile derleme ve JUnit 5 ile test
+- Sabit zaman adımlı oyun döngüsü ve ayrı durum, fizik, dünya, kaynak ve çizim sınıfları
+- Tamamlanan bölümler, en iyi süreler, yıldızlar ve ses ayarı için Java Preferences tabanlı yerel kayıt
+- `package.ps1` ve JDK `jpackage` ile runtime içeren Windows uygulama görüntüsü
 
-Ses açma/kapatma butonu `Kontroller` ekranının içindedir. Bu ekrana ana menüden veya oyun içi duraklatma menüsünden ulaşabilirsiniz.
+Windows paketini yerel olarak üretmek için `JAVA_HOME` değişkenini JDK 17 veya daha yeni bir JDK'ya ayarlayın, Maven'ı `PATH` içine ekleyin ve çalıştırın:
 
-## Oyun akışı
-
-Top otomatik olarak zıplar. Oyuncu yalnızca yatay hareketi yönetir. Testerelere temas etmek oyunu bitirir; potaya ulaşmak bölümü tamamlar. `Enter` ile sonuç ekranından yeniden başlayabilir veya 1. ve 2. bölümlerde sonraki bölüme geçebilirsiniz.
-
-3. bölüm oyunun en zor bölümüdür ve ek olarak checkpoint, yıldız ve daha yüksek zıplama sağlayan `BOUNCY` blokları içerir. Checkpoint etkinleştirildikten sonra oyun bitişinde `Enter` ile checkpoint noktasından devam edilebilir.
-
-```mermaid
-flowchart TD
-    A[Oyun başlatılır] --> B[Ana menü]
-    B --> C[Bölüm seçimi]
-    C --> D[Seçilen bölüm yüklenir]
-    D --> E[Top otomatik olarak zıplar]
-    E --> F{Oyuncu kararı}
-    F -->|Sağa / sola hareket| E
-    F -->|Checkpoint alınır| G[Checkpoint kaydedilir]
-    F -->|Yıldıza ulaşılır| H[Yıldız toplanır]
-    F -->|Testereye çarpılır| I[Game Over]
-    F -->|Potaya ulaşılır| J[Bölüm tamamlandı]
-    I -->|Yeniden başlat| D
-    I -->|Checkpoint'ten devam| G
-    J --> K{Sonraki bölüm var mı?}
-    K -->|Evet| C
-    K -->|Hayır| L[Oyun tamamlandı]
+```powershell
+.\package.ps1
 ```
 
-## Mimari
+Betik `dist/Zipzipismail/Zipzipismail.exe` ile `dist/Zipzipismail-portable.zip` çıktılarını oluşturur.
 
-Proje, oyun modeli, fizik, state yönetimi, kaynaklar ve çizim sorumluluklarını ayıran sade bir katmanlı yapı kullanır. Katı bir MVC framework'ü değildir; her sınıfın görev alanı küçük ve doğrudan tutulmuştur.
+## Testler
 
-- `app`: Uygulama başlangıcı ve pencere yaşam döngüsü
-- `core`: Oyun döngüsü, sabitler ve kullanıcı girdisi
-- `entity`: Oyuncu modeli ve oyuncu durumu
-- `physics`: Çarpışma yardımcıları
-- `world`: Harita, tile, kamera, checkpoint, yıldız ve hareketli platformlar
-- `state`: Menü, bölüm, pause akışı ve bölüm ilerlemesi
-- `ui`: HUD, menü, kontroller, oyuncu ve dünya çizimleri
-- `effect`: Zıplama partikülleri
-- `resource`: Görsel, ses, harita kaynağı ve kalıcı ilerleme yönetimi
-
-Önemli yapılar:
-
-- `GameState` ve `AbstractGameState`: Menü ve bölüm state ortaklığı
-- `GameStateManager`: State geçişleri ve global ses ayarı
-- `Player` ve `CollisionService`: Oyuncu fiziği ve çarpışma kuralları
-- `LevelProgress`: Süre, yıldız ve bölüm rekoru sorumluluğu
-- `MapLoader` ve `GameMap`: Harita kaynağının yüklenmesi ve oyun dünyası
-- `UiTheme`: Ortak arayüz font ve renkleri
-- `ProgressStore`: Java Preferences API ile yerel ilerleme kaydı
-
-## Proje yapısı
-
-```text
-Zipzipismail/
-├── assets/               README ekran görüntüleri ve oynanış demosu
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   └── resources/
-│   └── test/
-│       └── java/
-├── pom.xml
-├── package.ps1
-├── .gitignore
-├── .gitattributes
-└── README.md
-```
-
-## Test
-
-JUnit 5 testleri fizik, oyuncu çarpışması, kamera, harita yükleme, checkpoint, yıldız, input, ilerleme, UI render ve state geçişlerini kapsar.
+Test paketi; oyuncu ve çarpışma kurallarını, girdileri, harita yüklemeyi, kamera ve checkpoint davranışını, yıldızları, ilerleme kaydını, durum geçişlerini ve temel arayüz çizimini kapsayan 19 JUnit 5 testi içerir.
 
 ```powershell
 mvn test
 ```
 
-Son doğrulamada **19 test başarılı** olmuştur.
+## Diğer ekran görüntüleri
 
-## Paketleme
+<details>
+<summary>Galeriyi göster</summary>
 
-### Geliştirici JAR'ı
+<div align="center">
+<table>
+  <tr>
+    <td><img src="assets/01-level-selection.png" alt="Bölüm seçim ekranı" width="400"></td>
+    <td><img src="assets/02-level-1-gameplay.png" alt="1. bölüm oynanışı" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center">Bölüm seçimi</td>
+    <td align="center">1. bölüm</td>
+  </tr>
+  <tr>
+    <td><img src="assets/03-level-2-completed.png" alt="2. bölüm sonuç ekranı" width="400"></td>
+    <td><img src="assets/04-level-3-gameplay.png" alt="3. bölüm oynanışı" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center">2. bölüm sonucu</td>
+    <td align="center">3. bölüm</td>
+  </tr>
+  <tr>
+    <td><img src="assets/05-pause-menu.png" alt="Duraklatma menüsü" width="400"></td>
+    <td><img src="assets/06-controls-menu.png" alt="Kontroller ekranı" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center">Duraklatma menüsü</td>
+    <td align="center">Kontroller</td>
+  </tr>
+</table>
 
-Çalıştırılabilir JAR oluşturmak için:
+<img src="assets/07-game-over-checkpoint.png" alt="Checkpoint etkin durumdayken oyun sonu ekranı" width="520">
 
-```powershell
-mvn clean package
-```
+Checkpoint sonrası oyun sonu
+</div>
+</details>
 
-Çıktı:
+## Bilinen sınırlamalar
 
-```text
-target/zipzipismail-1.0.0.jar
-```
-
-JAR dosyasını doğrudan çalıştıracak bilgisayarda Java 17 veya üzeri bulunmalıdır. Java gerektirmeyen Windows paketi aşağıdaki `package.ps1` betiğiyle oluşturulabilir.
-
-### Java kurmadan Windows'ta oynama
-
-Windows için Java runtime içeren portable paket, JDK 21 ve Maven bulunan geliştirici bilgisayarında oluşturulabilir:
-
-[![Windows için indir](https://img.shields.io/badge/Windows-%C4%B0ndir-success?logo=windows)](https://github.com/emirkvrak/Zipzipismail/releases/latest/download/Zipzipismail-portable.zip)
-
-```powershell
-$env:JAVA_HOME = 'C:\Program Files\Java\jdk-21'
-.\package.ps1
-```
-
-Oluşan çıktılar:
-
-```text
-dist/Zipzipismail/Zipzipismail.exe
-dist/Zipzipismail-portable.zip
-```
-
-Portable ZIP başka bir Windows bilgisayara çıkarılıp `Zipzipismail.exe` çalıştırılarak açılabilir; hedef bilgisayarda ayrıca Java kurulması gerekmez. `dist/` ve `target/` derleme çıktıları repository'ye eklenmez.
-
-### Hazır Windows paketini indirme
-
-Java veya Maven kurmadan oynamak için [Windows portable paketini doğrudan indirin](https://github.com/emirkvrak/Zipzipismail/releases/latest/download/Zipzipismail-portable.zip). Alternatif olarak [GitHub Releases sayfasından](https://github.com/emirkvrak/Zipzipismail/releases/latest) `Zipzipismail-portable.zip` dosyasını seçebilirsiniz.
-
-1. ZIP dosyasını Windows üzerinde bir klasöre çıkarın.
-2. Çıkarılan `Zipzipismail` klasöründeki `Zipzipismail.exe` dosyasını çalıştırın.
-3. Portable paket Java runtime içerdiği için hedef bilgisayara ayrıca Java kurulması gerekmez.
-
-## Sınırlamalar
-
-- Tek oyunculu masaüstü oyunudur.
-- Online skor tablosu, multiplayer ve veritabanı yoktur.
-- Harici oyun motoru kullanılmaz.
-- Repository içinde ayrıca açık kaynak lisansı belirtilmemiştir.
-- Windows portable paketinin güncel sürümü GitHub Releases üzerinden dağıtılır.
-
-## Proje durumu
-
-Mevcut sürüm oynanabilir Maven/JAR yapısına, Java gerektirmeyen Windows portable EXE paketine, 3 bölüme, pause ve kontrol ekranlarına, kalıcı ilerleme kaydına ve otomatik test kapsamına sahiptir. Yeni bölüm veya yeni oynanış mekaniği eklemek bu README kapsamının dışındadır.
+- Oyun tek oyunculudur ve yalnızca masaüstünde çalışır.
+- Çevrim içi skor tablosu, çok oyunculu mod ve bulut kaydı yoktur.
+- İlerleme bilgisi kullanılan bilgisayardaki Java Preferences alanında saklanır; cihazlar arasında eşitlenmez.
+- Grafik arayüzü ve tüm oynanış akışı otomatik testlerle uçtan uca sınanmaz.
