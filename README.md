@@ -193,9 +193,12 @@ JAR dosyasını doğrudan çalıştıracak bilgisayarda Java 17 veya üzeri bulu
 
 ### Java kurmadan Windows'ta oynama
 
-`jpackage` ile Java runtime içeren Windows uygulama görüntüsü oluşturulabilir. Bunun için JDK 17 veya üzeri, Maven 3.9 veya üzeri ve `JAVA_HOME` tanımlı olmalıdır:
+Windows için Java runtime içeren portable paket, JDK 21 ve Maven bulunan geliştirici bilgisayarında oluşturulabilir:
+
+[![Windows için indir](https://img.shields.io/badge/Windows-%C4%B0ndir-success?logo=windows)](https://github.com/emirkvrak/Zipzipismail/releases/latest/download/Zipzipismail-portable.zip)
 
 ```powershell
+$env:JAVA_HOME = 'C:\Program Files\Java\jdk-21'
 .\package.ps1
 ```
 
