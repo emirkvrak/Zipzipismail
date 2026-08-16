@@ -1,12 +1,12 @@
+# Maven ve jpackage derleme/dağıtım çıktıları
 target/
-bin/
-build/
 dist/
-.classpath
-.project
-.settings/
+
+# IDE ayarları
 .idea/
 *.iml
 .vscode/
-hs_err_pid*.log
-replay_pid*.log
+
+# İşletim sistemi
+Thumbs.db
+.DS_Store
