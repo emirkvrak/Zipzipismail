@@ -1,12 +1,2 @@
-# Maven ve jpackage derleme/dağıtım çıktıları
 target/
 dist/
-
-# IDE ayarları
-.idea/
-*.iml
-.vscode/
-
-# İşletim sistemi
-Thumbs.db
-.DS_Store
